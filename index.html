@@ -104,7 +104,7 @@
 						<video muted class="noborder" >
 							<source data-src="openwebrx-move.webm" type="video/webm" />
 						</video>
-						<img src="arrow.png" class="fragment fade-in noborder" style="width: 150px; position: absolute; left: 59px; top: 673px;" data-fragment-index="0"/>
+						<img src="arrow.png" class="fragment fade-in noborder" style="transform: scaleY(-1); width: 150px; position: absolute; left: 59px; top: 558px;" data-fragment-index="0"/>
 					</section>		
 				</section>
 
@@ -160,13 +160,6 @@ vim config_webrx.py #edit config or leave defaults
 					</div>		
 				</section>
 
-				<!--
-				<section data-background="background.png" style="position: relative;">
-					<h1 data-smallcaps>Browser support</h1>
-					<img src="chrome-logo.png" class="noborder fragment fade-in" style="width: 470px; position: relative; top: -50px; left: -200px;" data-fragment-index="0"/>
-					<img src="firefox-logo.png" class="noborder fragment fade-in" style="width: 599px; position: absolute; top: 100px; left: 350px;" data-fragment-index="1" />
-				</section>
-				-->
 <section>
 				<section>
 				<h1 data-smallcaps>Story</h1>
@@ -460,9 +453,62 @@ csdr fastagc_ff | csdr convert_f_i16 | mplayer -cache 1024 -quiet \
 						
 					</div>		
 				</section>
+
+				<section data-background="background.png" style="position: relative;">
+					<h1 data-smallcaps>JIT in Browsers</h1>
+					<img src="chrome-logo.png" class="noborder fragment fade-in" style="width: 430px; position: relative; top: -50px; left: -170px;" data-fragment-index="0"/>
+					<img src="firefox-logo.png" class="noborder fragment fade-in" style="width: 549px; position: absolute; top: 100px; left: 380px;" data-fragment-index="1" />
+					<h2 class="noborder fragment fade-in" data-fragment-index="0" style="color:White; position: absolute; top: 590px; left: 188px; font-size:40pt; text-shadow: 0px 0px 20px rgba(255,255,255,0.59);" >V8 engine</h2>
+					<h2 class="noborder fragment fade-in" data-fragment-index="1" style="color:White; position: absolute; top: 590px; left: 477px; font-size:40pt; text-shadow: 0px 0px 20px rgba(255,255,255,0.59);" >TraceMonkey</h2>
+				</section>
+
+				<section data-background="background.png" >			
+					<h1 data-smallcaps style="display: inline;">ASM.JS</h1><h1 style="display: inline;"> by Mozilla</h1>
+					<img class="fragment fade-in-reldown noborder" style="width: 59%;" data-fragment-index="0" src="emscripten.png" />
+					<pre class="fragment fade-in-reldown" style="font-size: 28pt;" data-fragment-index="1"><code>$ gcc something.c -o something</code></pre>
+					<pre class="fragment fade-in-reldown" style="font-size: 28pt;" data-fragment-index="2"><code>$ emcc something.c -o something.js</code></pre>
+				</section>
+
+				<section>
+					<img src="emcc-sdr.png" class="noborder"/>
+				</section>
+				<section>
+					<h1 style="font-size: 50pt;" data-smallcaps>Signal processing in JS</h1>
+					<img class="noborder" style="width: 599px; position: relative; top: -40px;" src="google-radioreceiver.png" />
+				</section>
+				<section>
+					<h1 data-smallcaps>sdr.js</h1>
+					libcsdr compiled to ASM.js<br /><br />
+					<img class="noborder fragment fade-in" src="sdrjs-bwchange-2.png" data-fragment-index="0" style="width:70%;" />
+				</section>
+				<section>
+					<ul>
+						<h1 style="font-size: 50pt;">Just one last crazy idea...</h1>
+						<p style="font-size: 45pt;" class="fragment fade-in-reldown" data-fragment-index="0">Audio: 1D vector of samples
+						<img class="noborder" src="wt-1.png" style="width: 70%;" ></p>
+						<p style="font-size: 45pt;" class="fragment fade-in-reldown" data-fragment-index="1">Waterfall: 1D vector of dBm values
+						<img class="noborder" src="wt-2.png" style="width: 70%;" ></p>
+						<p style="font-size: 45pt;" class="fragment fade-in-reldown" data-fragment-index="2">...compress both with ADPCM?</p>
+					</ul>
+				</section>
+				<section  data-background="background.png">
+					<img class="noborder" src="openwebrx-git.png"  >
+				</section>
+				<section  data-background="background.png">
+					<h1 data-smallcaps>Thesis</h1>
+					<img class="noborder" src="thesis.png" style="width: 90%;"/>
+				</section>
+				<section >
+					<img class="noborder" src="sdrhu-logo-main-wb.png">
+				</section>
+
+
+					
 			</div>
 
 		</div>
+
+
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
