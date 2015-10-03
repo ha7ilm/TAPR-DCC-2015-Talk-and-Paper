@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>OpenWebRX: SDR Web Application for the Masses</title>
+
+		<meta name="description" content="DCC Presentation on OpenWebRX">
+		<meta name="author" content="András Retzler">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<style>
+		 .reveal section img.noborder {
+			border:none; 
+			background: none;
+			box-shadow: none;
+		}
+		.reveal .slides section .fragment.fade-in-reldown { opacity: 0; visibility: hidden; top: -100px; relative: relative; }
+		.reveal .slides section .fragment.fade-in-reldown.visible { opacity: 1; visibility: visible; top: 0px; position: relative; }
+		.reveal .slides section .fragment.fade-in-up { opacity: 0; visibility: hidden; top: 100px; position: absolute; }
+		.reveal .slides section .fragment.fade-in-up.visible { opacity: 1; visibility: visible; top: 0px; position: absolute; }
+		.above-each-other {  width: 80%; position: absolute; top:0; left: 95px; }
+		.80p { width: 805; }
+		.reveal .slides section .fragment.go-right { position: relative; left: -100px; visibility: visible; opacity: 1;}
+		.reveal .slides section .fragment.go-right.visible { position: relative; left: 0px; }
+		.reveal .slides section .fragment.go-left { position: relative; left: 255px; visibility: visible; opacity: 1;}
+		.reveal .slides section .fragment.go-left.visible { position: relative; left: 0px; }
+		.code-above-each-other { width: 100%; position: absolute; top: 0px; left: 0px; }
+		.code-above-each-other pre { width: 100%; }
+		p.license-reference { color: #aaa; font-size: 12pt; }
+		.license-reference a { color: #888; }
+		
+		</style>
+
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides" >
+				<section data-background="background.png">
+					<img src="slide-1.png" class="noborder" style="position: relative; top: 59px;">
+				</section>
+
+				<section data-background="background.png">
+					<h1 data-smallcaps>WebSDR</h1>
+					<img src="slide-2-websdr.png" class="noborder" style="width: 80%;" />
+				</section>
+				<section data-background="background.png">
+					<h1 data-smallcaps>ShinySDR</h1>
+					<img src="slide-2-shinysdr.png" class="noborder" style="width: 80%;" />
+				</section>
+
+				<section data-background="background.png">
+					<section>					
+					<h1 data-smallcaps>OpenWebRX</h1>
+					<img class="noborder" src="openwebrx-git.png" style="width: 80%;"/>
+					</section>					
+					<section>					
+					<div style="position: relative;">
+						<video class="noborder">
+							<source data-src="ddc-vid1.webm" type="video/webm" />
+						</video>
+						<!--<span class="fragment fade-out" data-fragment-index="1"><img src="slide-3-fragment-1.png" class="noborder fragment fade-in visible" style="display: table-cell; width: 80%; position: absolute; top:0; left: 95px;" data-fragment-index="0"></span>
+						<img src="slide-3-fragment-2.png" class="noborder fragment fade-in visible" style="display: table-cell; width: 80%; position: absolute; top:0; left: 95px;" data-fragment-index="2">-->
+					</div>	
+					</section>
+					<section>
+						<video class="noborder" >
+							<source data-src="cwgood.webm" type="video/webm" />
+						</video>
+					</section>
+					<section>
+						<video muted class="noborder" >
+							<source data-src="good2webm.webm" type="video/webm" />
+						</video>
+					</section>		
+					<section>
+						<video muted class="noborder" >
+							<source data-src="openwebrx-move.webm" type="video/webm" />
+						</video>
+						<img src="arrow.png" class="fragment fade-in noborder" style="width: 150px; position: absolute; left: 59px; top: 673px;" data-fragment-index="0"/>
+					</section>		
+				</section>
+
+				<!--
+				<section data-background="background.png">
+					<h1 data-smallcaps>OpenWebRX</h1>
+					<div style="position: relative;">
+						<img src="slide-3-openwebrx.png" class="noborder" style="width: 80%; ">
+						<span class="fragment fade-out" data-fragment-index="1"><img src="slide-3-fragment-1.png" class="noborder fragment fade-in visible" style="display: table-cell; width: 80%; position: absolute; top:0; left: 95px;" data-fragment-index="0"></span>
+						<img src="slide-3-fragment-2.png" class="noborder fragment fade-in visible" style="display: table-cell; width: 80%; position: absolute; top:0; left: 95px;" data-fragment-index="2">
+					</div>					
+				</section>
+				-->
+
+				<section data-background="background.png">
+						<img src="sdrhu.png" class="noborder">
+				</section>
+
+				<!--
+				<section>
+					<img src="slide-4-graph.png" class="noborder" style="width: 80%; ">
+					<img src="slide-4-fragment-pc.png" class="noborder fragment fade-in visible" style="width: 420px;" data-fragment-index="0">
+					<img src="slide-4-fragment-sbc.png" class="noborder fragment fade-in visible" style="width: 420px;" data-fragment-index="1">
+				</section>
+				-->
+
+				<section>
+					<h1 data-smallcaps>How to set up your own server?</h1>
+				</section>
+
+				<section>
+					<div style="position: relative; top: -70px;">
+						<img src="systemslide1.png" class="noborder" style="width: 80%;">
+						<span class="fragment fade-out" data-fragment-index="1">
+							<img src="systemslide1b.png" class="noborder fragment fade-in-up visible" style="display: table-cell; width: 80%; position: absolute; top:0; left: 95px;" data-fragment-index="0">
+						</span>
+						<img src="systemslide2.png" class="noborder fragment fade-in visible above-each-other" data-fragment-index="2">
+						<img src="systemslide3.png" class="noborder fragment fade-in-up visible above-each-other" data-fragment-index="3">
+						<span class="fragment fade-out" data-fragment-index="5">						
+							<img src="systemslide3b.png" class="noborder fragment fade-in-up visible above-each-other" data-fragment-index="4">
+						</span>
+						<span class="fragment fade-out" data-fragment-index="7"><span class="fragment fade-in" data-fragment-index="6" style="position: absolute; top:450px; left:0px; width: 100%;"><pre><code>#!/bin/bash
+git clone https://github.com/simonyiszk/openwebrx.git
+git clone https://github.com/simonyiszk/csdr.git
+cd csdr
+make
+sudo make install
+cd ../openwebrx
+vim config_webrx.py #edit config or leave defaults
+./openwebrx.py</code></pre></span></span>
+						<img src="systemslide4.png" class="noborder fragment fade-in visible above-each-other" data-fragment-index="8">
+						<img src="systemslide5.png" class="noborder fragment fade-in-up visible above-each-other" data-fragment-index="9">
+					</div>		
+				</section>
+
+				<!--
+				<section data-background="background.png" style="position: relative;">
+					<h1 data-smallcaps>Browser support</h1>
+					<img src="chrome-logo.png" class="noborder fragment fade-in" style="width: 470px; position: relative; top: -50px; left: -200px;" data-fragment-index="0"/>
+					<img src="firefox-logo.png" class="noborder fragment fade-in" style="width: 599px; position: absolute; top: 100px; left: 350px;" data-fragment-index="1" />
+				</section>
+				-->
+<section>
+				<section>
+				<h1 data-smallcaps>Story</h1>
+				<aside class="notes">And now I'm going to tell you a story.</aside>
+				</section>
+				<section>
+					<img class="noborder" src="dsp-rajz.png" />
+<aside class="notes">
+At one of our workshops at the radio club, I told the guys about the basics of SDR: what is A/D conversion, how to deal with signals, and how do some analog and digital modulations work.
+				</section>
+</section>
+				<section data-background="background.png">
+					<h1 data-smallcaps>minidemod.c</h1>
+					<pre><code>#include &lt;math.h&gt;
+#include &lt;stdio.h&gt;
+
+int main()
+{
+	double i, q, i_last=q_last=0, s;
+	for(;;)
+	{
+		i=((unsigned char)getchar()-127); 
+		q=((unsigned char)getchar()-127);
+		// s = ???
+		putchar((unsigned char)(s+127));
+		i_last=i; q_last=q;
+	}
+}
+					</code></pre>
+				</section>
+
+				<section data-background="background.png">
+					<h1 data-smallcaps>minidemod.c</h1>
+					<pre><code>#include &lt;math.h&gt;
+#include &lt;stdio.h&gt;
+
+int main()
+{
+	double i, q, i_last=q_last=0, s;
+	for(;;)
+	{
+		i=((unsigned char)getchar()-127); 
+		q=((unsigned char)getchar()-127);
+		s=100*(atan2(i,q)-atan2(i_last,q_last)); 
+		putchar((unsigned char)(s+127));
+		i_last=i; q_last=q;
+	}
+}
+					</code></pre>
+				<div style="background-color: #3f3f3f; opacity: 0.7; position: absolute; left: 50px; top: 159px; height: 250px; width: 89%;"></div>
+				<div style="background-color: #3f3f3f; opacity: 0.7; position: absolute; left: 50px; top: 437px; height: 125px; width: 89%;"></div>
+
+				</section>
+
+				<section data-background="background.png">
+					<h1 data-smallcaps>minidemod.c</h1>
+					<pre><code>#include &lt;math.h&gt;
+#include &lt;stdio.h&gt;
+
+int main()
+{
+	double i, q, i_last=q_last=0, s;
+	for(;;)
+	{
+		i=((unsigned char)getchar()-127); 
+		q=((unsigned char)getchar()-127);
+		s=70*((i*(q-q_last)) - (q*(i-i_last)))/(i*i+q*q);
+		putchar((unsigned char)(s+127));
+		i_last=i; q_last=q;
+	}
+}
+					</code></pre>
+				<div style="background-color: #3f3f3f; opacity: 0.7; position: absolute; left: 50px; top: 159px; height: 250px; width: 89%;"></div>
+				<div style="background-color: #3f3f3f; opacity: 0.7; position: absolute; left: 50px; top: 437px; height: 125px; width: 89%;"></div>
+				</section>
+			<section>
+				<section data-background="background.png">
+					<h1 data-smallcaps>Running minidemod</h1>
+					<pre><code>#!/bin/bash
+rtl_sdr -s 240000 -f 89500000 -g 20 - | \  # taking I/Q samples
+tcc -lm -run minidemod-wfm.c | \           # FM demodulation 
+sox -t raw -r 240000 -e unsigned -b 8 \	   # decimation
+   -c 1 - -t raw - rate 48000 | \
+mplayer -quiet -rawaudio \                 # sound card output
+   samplesize=1:channels=1:rate=48000 
+   -demuxer rawaudio -</code></pre>
+				</section>
+
+				<section data-background="background.png">
+					<a href="https://github.com/simonyiszk/minidemod/" style="text-decoration: underline; font-size: 44px;">https://github.com/simonyiszk/minidemod/</a>
+				</section>
+			</section>
+
+			<section>
+				<section data-background="background.png">
+				<h1><span class="fragment fade-in" data-fragment-index="0">lib</span><span class="fragment go-right" data-fragment-index="0">csdr</span></h1>
+				</section>
+				<section data-background="background.png" style="position: relative;">
+					<div class="code-above-each-other"><pre><code>#!/bin/bash
+
+
+
+
+
+
+					</code></pre></div>
+					<div class="code-above-each-other"><pre  class="fragment fade-in code-above-each-other" data-fragment-index="1"><code>#!/bin/bash
+rtl_sdr -s 2400000 -f 145000000 -g 20 - | 
+
+
+
+
+
+					</code></pre></div>
+					<div class="code-above-each-other"><pre  class="fragment fade-in code-above-each-other" data-fragment-index="2"><code>#!/bin/bash
+rtl_sdr -s 2400000 -f 145000000 -g 20 - | csdr convert_u8_f | \
+
+
+
+
+
+					</code></pre></div>
+					<div class="code-above-each-other"><pre  class="fragment fade-in code-above-each-other" data-fragment-index="3"><code>#!/bin/bash
+rtl_sdr -s 2400000 -f 145000000 -g 20 - | csdr convert_u8_f | \
+csdr shift_addition_cc -0.145833 | \ #shift by -0.350 MHz
+
+
+
+
+					</code></pre></div>
+					<div class="code-above-each-other"><pre  class="fragment fade-in code-above-each-other" data-fragment-index="4"><code>#!/bin/bash
+rtl_sdr -s 2400000 -f 145000000 -g 20 - | csdr convert_u8_f | \
+csdr shift_addition_cc -0.145833 | \
+csdr fir_decimate_cc 50 0.005 HAMMING | \
+
+
+
+					</code></pre></div>
+					<div class="code-above-each-other"><pre  class="fragment fade-in code-above-each-other" data-fragment-index="5"><code>#!/bin/bash
+rtl_sdr -s 2400000 -f 145000000 -g 20 - | csdr convert_u8_f | \
+csdr shift_addition_cc -0.145833 | \
+csdr fir_decimate_cc 50 0.005 HAMMING | \
+csdr fmdemod_quadri_cf | 
+
+
+					</code></pre></div>
+					<div class="code-above-each-other"><pre  class="fragment fade-in code-above-each-other" data-fragment-index="6"><code>#!/bin/bash
+rtl_sdr -s 2400000 -f 145000000 -g 20 - | csdr convert_u8_f | \
+csdr shift_addition_cc -0.145833 | \
+csdr fir_decimate_cc 50 0.005 HAMMING | \
+csdr fmdemod_quadri_cf | csdr limit_ff | 
+
+
+					</code></pre></div>
+					<div class="code-above-each-other"><pre  class="fragment fade-in code-above-each-other" data-fragment-index="7"><code>#!/bin/bash
+rtl_sdr -s 2400000 -f 145000000 -g 20 - | csdr convert_u8_f | \
+csdr shift_addition_cc -0.145833 | \
+csdr fir_decimate_cc 50 0.005 HAMMING | \
+csdr fmdemod_quadri_cf | csdr limit_ff | csdr deemphasis_nfm_ff 48000 | \
+
+
+					</code></pre></div>
+					<div class="code-above-each-other"><pre  class="fragment fade-in code-above-each-other" data-fragment-index="8"><code>#!/bin/bash
+rtl_sdr -s 2400000 -f 145000000 -g 20 - | csdr convert_u8_f | \
+csdr shift_addition_cc -0.145833 | \
+csdr fir_decimate_cc 50 0.005 HAMMING | \
+csdr fmdemod_quadri_cf | csdr limit_ff | csdr deemphasis_nfm_ff 48000 | \
+csdr fastagc_ff | 
+
+					</code></pre></div>
+					<div class="code-above-each-other"><pre  class="fragment fade-in code-above-each-other" data-fragment-index="9"><code>#!/bin/bash
+rtl_sdr -s 2400000 -f 145000000 -g 20 - | csdr convert_u8_f | \
+csdr shift_addition_cc -0.145833 | \
+csdr fir_decimate_cc 50 0.005 HAMMING | \
+csdr fmdemod_quadri_cf | csdr limit_ff | csdr deemphasis_nfm_ff 48000 | \
+csdr fastagc_ff | csdr convert_f_i16 | 
+
+					</code></pre></div>
+					<div class="code-above-each-other"><pre class="fragment fade-in code-above-each-other" data-fragment-index="10"><code>#!/bin/bash
+rtl_sdr -s 2400000 -f 145000000 -g 20 - | csdr convert_u8_f | \
+csdr shift_addition_cc -0.145833 | \
+csdr fir_decimate_cc 50 0.005 HAMMING | \
+csdr fmdemod_quadri_cf | csdr limit_ff | csdr deemphasis_nfm_ff 48000 | \
+csdr fastagc_ff | csdr convert_f_i16 | mplayer -cache 1024 -quiet \
+   -rawaudio samplesize=2:channels=1:rate=48000 -demuxer rawaudio -
+					</code></pre></div>
+
+				</section>
+				<section data-background="background.png">
+					<video class="noborder" >
+						<source data-src="csdr-test-2.webm" type="video/webm" />
+					</video>
+				</section>
+				<section data-background="background.png">
+					<ul>
+						<p style="font-size: 45pt;">- Small</p>
+						<p style="font-size: 45pt;" class="fragment fade-in-reldown" data-fragment-index="0">- Fast to build</p>
+						<p style="font-size: 45pt;" class="fragment fade-in-reldown" data-fragment-index="1">- Allows using multiple cores</p>
+					</ul>
+					<aside class="notes">
+						It is good for embedded systems - is smaller, and is easier and faster to build than GNU Radio. If you ever tried to build GNU Radio from source, you know what I'm talking about. 
+						But GNU Radio is much more capable. 
+						csdr is good for ham radio needs: AM/FM/SSB
+
+						It is also a very easy way to do a DSP on multiple CPU cores.
+						Scheduling: key point in dataflow systems like this. When I first tried this, I thought that it will lag, it won't work. But it does, and 
+					</aside>
+				</section>
+				<section data-background="background.png">
+					<img class="noborder" src="grc-1.png" />
+				</section>
+				<section data-background="background.png">
+					<img class="noborder" src="csdr-in-openwebrx.png" />
+				</section>
+				<section data-background="background.png">
+					<img class="noborder" src="csdr-top-pi.png" />
+				</section>
+				<section>
+					<span class="fragment fade-in-reldown" data-fragment-index="0">
+						<img class="noborder" src="user.png" style="width: 120px;"/>
+						<img class="noborder" src="user.png" style="width: 120px;"/>
+					</span>
+					<img class="noborder" src="user.png" style="width: 120px;"/> 
+					<span class="fragment fade-in-reldown" data-fragment-index="0">
+						<img class="noborder" src="user.png" style="width: 120px;"/>
+						<img class="noborder" src="user.png" style="width: 120px;"/> 
+					</span>
+					<br />
+					
+					<img class="fragment fade-out noborder" src="chip-20p.png" style="position: relative; left: 68px;" data-fragment-index="0"/>
+					<img class="fragment fade-in noborder" src="chip-100p.png" style="position:relative; left: -68px;" data-fragment-index="0"/>
+					
+				</section>
+			</section>
+			<section>
+				<h1 data-smallcaps>Acceleration</h1>
+				<span class="fragment fade-out" data-fragment-index="1"><img src="simd.png" class="noborder fragment fade-in" style="position: absolute; left: 170px;" data-fragment-index="0"/></span>
+				<span class="fragment fade-out" data-fragment-index="2"><img src="gpgpu.png" class="noborder fragment fade-in" style="position: absolute; left: 170px; width: 226px;" data-fragment-index="1"/></span>
+				<img src="adapteva.png" class="noborder fragment fade-in" style="position: absolute; left: 170px;" data-fragment-index="2"/>
+				<ul>
+					<p style="font-size: 70pt; text-align: center; position: relative; left: 150px;" class="fragment fade-in-reldown" data-fragment-index="0">SIMD</p>
+					<p style="font-size: 70pt; text-align: center; position: relative; left: 150px;" class="fragment fade-in-reldown" data-fragment-index="1">GPGPU</p>
+					<p style="font-size: 70pt; text-align: center; position: relative; left: 150px;" class="fragment fade-in-reldown" data-fragment-index="2">FPGA</p>
+				</ul>
+				<p class="license-reference fragment fade-in" data-fragment-index="2">
+					Image by Gareth Halfacree, flickr user ghalfacree [<a href="http://creativecommons.org/licenses/by-sa/2.0">CC BY-SA 2.0</a>], <a href="https://commons.wikimedia.org/wiki/File%3AAdapteva_Parallella_DK02_-_Top_(15478282925).jpg">via Wikimedia Commons</a>
+				</p>
+			</section>
+			<section>
+				<h1 data-smallcaps>SIMD</h1>
+				<svg height="150" width="300" style="position: relative; top: -30px;" data-fragment-index="0" class="fragment fade-in">
+  					<line x1="200" y1="10" x2="290" y2="90" style="stroke:rgb(0,0,0);stroke-width:12" />
+					<line x1="100" y1="10" x2="10" y2="90" style="stroke:rgb(0,0,0);stroke-width:12" />
+				</svg>
+				<h1 style="position: absolute; left: 250px; top: 250px;" data-fragment-index="0" class="fragment fade-in">SSE</h1>
+				<h1 style="position: absolute; left: 500px; top: 250px;" data-fragment-index="0" class="fragment fade-in">NEON</h1>
+			</section>
+			<section>
+				<section>
+					<h1 data-smallcaps>Using SIMD</h1>
+					<ul>
+						<p style="font-size: 45pt;" style="text-align: center;" class="fragment fade-in-reldown" data-fragment-index="0">Auto-vectorization (-O3)</p>
+						<p style="font-size: 45pt;" style="text-align: center;" class="fragment fade-in-reldown" data-fragment-index="1">C intrinsics</p>
+						<p style="font-size: 45pt;" style="text-align: center;" class="fragment fade-in-reldown" data-fragment-index="2">Hand-coded assembly</p>
+					</ul>
+				</section>
+				<section>
+					<img class="noborder" src="decimator-1.png" />
+				</section>
+				<section>
+					<img class="noborder" src="decimator-2.png" />
+				</section>
+				<section>
+					<img class="noborder" src="neon-top.png" style="width:677px;"/>
+				</section>
+			</section>
+			
+				<section>
+					<div style="position: relative; top: -70px;">
+						<img src="distrib1.png" class="noborder" style="width: 100%;">
+						<img src="distrib2.png" class="noborder fragment fade-in-up visible" style="display: table-cell; width: 100%; position: absolute; top:0; left: 20px;" data-fragment-index="0">
+						<img src="distrib3.png" class="noborder fragment fade-in-up visible" style="display: table-cell; width: 100%; position: absolute; top:0; left: 20px;" data-fragment-index="1">
+						<img src="distrib4.png" class="noborder fragment fade-in-up visible" style="display: table-cell; width: 100%; position: absolute; top:0; left: 20px;" data-fragment-index="2">
+						<img src="distrib5.png" class="noborder fragment fade-in visible" style="display: table-cell; width: 100%; position: absolute; top:0; left: 20px;" data-fragment-index="3">
+						<!--<img src="systemslide2.png" class="noborder fragment fade-in visible above-each-other" data-fragment-index="2">
+						<img src="systemslide3.png" class="noborder fragment fade-in-up visible above-each-other" data-fragment-index="3">
+						<span class="fragment fade-out" data-fragment-index="5">						
+							<img src="systemslide3b.png" class="noborder fragment fade-in-up visible above-each-other" data-fragment-index="4">
+						</span>
+						<span class="fragment fade-out" data-fragment-index="7"><span class="fragment fade-in" data-fragment-index="6" style="position: absolute; top:450px; left:0px; width: 100%;"><pre><code>#!/bin/bash
+						</code></pre></span></span>
+						<img src="systemslide4.png" class="noborder fragment fade-in visible above-each-other" data-fragment-index="8">
+						<img src="systemslide5.png" class="noborder fragment fade-in-up visible above-each-other" data-fragment-index="9">-->
+					</div>		
+				</section>
+			
+				<section>
+					<div style="position: relative; top: -70px;">
+						<span class="noborder fragment fade-out visible" data-fragment-index="4">
+						<img src="distrib1.png" class="noborder" style="width: 100%;">
+						<img src="distrib2.png" class="noborder fragment fade-in-up visible" style="display: table-cell; width: 100%; position: absolute; top:0; left: 20px;" data-fragment-index="0">
+						<img src="distrib3.png" class="noborder fragment fade-in-up visible" style="display: table-cell; width: 100%; position: absolute; top:0; left: 20px;" data-fragment-index="1">
+						<img src="distrib4.png" class="noborder fragment fade-in-up visible" style="display: table-cell; width: 100%; position: absolute; top:0; left: 20px;" data-fragment-index="2">
+						<img src="distrib5.png" class="noborder fragment fade-in visible" style="display: table-cell; width: 100%; position: absolute; top:0; left: 20px;" data-fragment-index="3">
+						</span>
+						<img src="distrib7.png" class="noborder" style="width: 100%;" class="noborder fragment fade-in visible" data-fragment-index="4">
+						<img src="distrib8.png" class="noborder fragment fade-in-up visible" style="display: table-cell; width: 100%; position: absolute; top:0; left: 20px;" data-fragment-index="5">
+						<img src="distrib9.png" class="noborder fragment fade-in visible" style="display: table-cell; width: 100%; position: absolute; top:0; left: 20px;" data-fragment-index="6">
+						
+					</div>		
+				</section>
+
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script>
+			Reveal.addEventListener( 'ready', function( event ) {
+				$("*[data-smallcaps]").each(function(x,y){
+					$(y).html( $(y).text().replace(/[A-Z]+/g,function(x){return "<span style='font-size: 125%;'>"+x+"</span>";} ));
+				});
+			} );
+
+			$("video").click(function(e){
+			    this.currentTime = 0; this.play(); console.log("video::clicked");
+			});
+
+		</script>
+
+	</body>
+</html>
