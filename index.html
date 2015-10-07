@@ -57,7 +57,6 @@
 		.reveal pre { font-family: dejavu_sans_monobook; }
 		.reveal code { font-family: dejavu_sans_monobook; }
 
-		
 		</style>
 
 	</head>
@@ -96,7 +95,7 @@
 					</div>	
 					</section>
 					<section>
-						<video class="noborder" >
+						<video class="noborder">
 							<source data-src="cwgood.webm" type="video/webm" />
 						</video>
 					</section>
@@ -207,7 +206,7 @@ int main()
 
 int main()
 {
-	double i, q, i_last=q_last=0, s;
+	double i, q, i_last=0, q_last=0, s;
 	for(;;)
 	{
 		i=((unsigned char)getchar()-127); 
@@ -230,7 +229,7 @@ int main()
 
 int main()
 {
-	double i, q, i_last=q_last=0, s;
+	double i, q, i_last=0, q_last=0, s;
 	for(;;)
 	{
 		i=((unsigned char)getchar()-127); 
@@ -249,7 +248,7 @@ int main()
 					<h1 data-smallcaps>Running minidemod</h1>
 					<pre><code>#!/bin/bash
 rtl_sdr -s 240000 -f 89500000 -g 20 - | \  # taking I/Q samples
-tcc -lm -run minidemod-wfm.c | \           # FM demodulation 
+tcc -lm -run minidemod.c | \           # FM demodulation 
 sox -t raw -r 240000 -e unsigned -b 8 \	   # decimation
    -c 1 - -t raw - rate 48000 | \
 mplayer -quiet -rawaudio \                 # sound card output
@@ -358,7 +357,7 @@ csdr fastagc_ff | csdr convert_f_i16 | mplayer -cache 1024 -quiet \
 
 				</section>
 				<section data-background="background.png">
-					<video class="noborder" >
+					<video class="noborder" style="width: 100%;">
 						<source data-src="csdr-test-2.webm" type="video/webm" />
 					</video>
 				</section>
@@ -378,13 +377,13 @@ csdr fastagc_ff | csdr convert_f_i16 | mplayer -cache 1024 -quiet \
 					</aside>
 				</section>
 				<section data-background="background.png">
-					<img class="noborder" src="grc-1.png" />
+					<img class="noborder" style="width: 100%;" src="grc-1.png" />
 				</section>
 				<section data-background="background.png">
-					<img class="noborder" src="csdr-in-openwebrx.png" />
+					<img class="noborder" style="width: 100%;" src="csdr-in-openwebrx.png" />
 				</section>
 				<section data-background="background.png">
-					<img class="noborder" src="csdr-top-pi.png" />
+					<img class="noborder" style="width: 100%;" src="csdr-top-pi.png" />
 				</section>
 				<!--<section>
 					<span class="fragment fade-in-reldown" data-fragment-index="0">
@@ -402,8 +401,9 @@ csdr fastagc_ff | csdr convert_f_i16 | mplayer -cache 1024 -quiet \
 					<img class="fragment fade-in noborder" src="chip-100p.png" style="position:relative; left: -68px;" data-fragment-index="0"/>
 					
 				</section>-->
-				<section>
-					<h1 style="font-family: dejavu_sans_monobook;">TODO: multiple users connect</h1>
+				<section data-background="background.png">
+					<!--<h1 style="font-family: dejavu_sans_monobook;">TODO: multiple users connect</h1>-->
+					<img class="noborder" style="width: 100%;" src="top-all-proc.png" />
 				</section>
 			</section>
 			<section>
@@ -552,6 +552,7 @@ csdr fastagc_ff | csdr convert_f_i16 | mplayer -cache 1024 -quiet \
 				progress: true,
 				history: true,
 				center: true,
+				zoomKey: 'ctrl',
 
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
